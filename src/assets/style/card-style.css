@@ -1,0 +1,104 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #f2f2f2, #eaeaea);
+  margin: 0;
+  padding: 30px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.restaurant-card {
+  width: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 80%);
+  width: 100%;
+  height: min-content;
+}
+
+.restaurant-info {
+  padding: 16px;
+  text-align: left;
+}
+
+.restaurant-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #222;
+}
+
+.restaurant-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(
+    to top,
+    rgba(100, 100, 100, 0.6),
+    transparent 60%
+  );
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.restaurant-card:hover .overlay {
+  opacity: 0;
+}
+
+.restaurant-card:hover .restaurant-image {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
